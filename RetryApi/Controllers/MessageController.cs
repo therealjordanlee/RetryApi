@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using WebApplication1.Services;
+using RetryApi.Services;
 
-namespace WebApplication1.Controllers
+namespace RetryApi.Controllers
 {
     [Route("message")]
     public class MessageController : Controller
