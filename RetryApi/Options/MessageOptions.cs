@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Options
+﻿namespace RetryApi.Options
 {
     public class MessageOptions
     {

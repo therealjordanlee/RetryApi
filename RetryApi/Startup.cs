@@ -11,10 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RetryApi.Repositories;
-using WebApplication1.Options;
-using WebApplication1.Services;
+using RetryApi.Options;
+using RetryApi.Services;
 
-namespace WebApplication1
+namespace RetryApi
 {
     public class Startup
     {

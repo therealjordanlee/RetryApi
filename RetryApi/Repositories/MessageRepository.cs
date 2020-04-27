@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using System;
 using System.Threading.Tasks;
-using WebApplication1.Options;
+using RetryApi.Options;
 
 namespace RetryApi.Repositories
 {
@@ -43,7 +43,6 @@ namespace RetryApi.Repositories
                 Console.WriteLine("ERROR! Throwing Exception");
                 throw new Exception("Exception in MessageRepository");
             }
-            //throw new Exception("Exception in MessageRepository");
         }
     }
 }

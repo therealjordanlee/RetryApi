@@ -5,7 +5,7 @@ using RetryApi.Repositories;
 using System;
 using System.Threading.Tasks;
 
-namespace WebApplication1.Services
+namespace RetryApi.Services
 {
     public interface IMessageService
     {
@@ -45,38 +45,20 @@ namespace WebApplication1.Services
 
         public async Task<string> GetHelloMessage()
         {
-            //string result = null;
-
-            //try
-            //{
-            //    await _retryPolicy.ExecuteAsync(async () =>
-            //    {
-            //        result = await _messageRepository.GetHelloMessage();
-            //    });
-            //}
-            //catch(Exception ex)
-            //{
-            //    Console.WriteLine("Call to MessageRepository failed");
-            //    throw;
-            //}
-
-            //return result;
-
             return await _retryPolicy.ExecuteAsync<string>(async () => await _messageRepository.GetHelloMessage());
         }
 
         public async Task<string> GetGoodbyeMessage()
         {
-            //return await _messageRepository.GetGoodbyeMessage();
-
-            try {
+            try
+            {
                 Console.WriteLine($"Circuit State: {_circuitBreakerPolicy.CircuitState}");
                 return await _circuitBreakerPolicy.ExecuteAsync<string>(async () =>
                 {
                     return await _messageRepository.GetGoodbyeMessage();
                 });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return ex.Message;
             }
