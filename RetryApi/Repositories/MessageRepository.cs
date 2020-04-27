@@ -43,7 +43,6 @@ namespace RetryApi.Repositories
                 Console.WriteLine("ERROR! Throwing Exception");
                 throw new Exception("Exception in MessageRepository");
             }
-            //throw new Exception("Exception in MessageRepository");
         }
     }
 }
